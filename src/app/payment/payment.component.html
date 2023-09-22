@@ -1,0 +1,5 @@
+<h2>Formulaire de paiement</h2>
+<div *ngIf="selectedCandidate">
+  <p>{{ selectedCandidate.name }} a réservé une date d'examen pour le {{ selectedDate }}.</p>
+  <button (click)="pay()">Payer</button>
+</div>
