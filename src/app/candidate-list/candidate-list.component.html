@@ -1,9 +1,105 @@
-<h2>Liste des candidats</h2>
-<ul>
-  <li *ngFor="let candidate of candidates">
-    {{ candidate.name }} - Date de l'examen :
-    {{ candidate.selectedDate ? candidate.selectedDate : 'Non réservée' }}
-  </li>
-</ul>
+<div class="">
+<div  class="nav-flex">
+      <mat-card>
+        <mat-card-content>
+          <mat-card-header>
+            <mat-card-title>Bar Graph</mat-card-title>
+          </mat-card-header>
+          <div style="display: block;">
+            <canvas id="myBarChart"></canvas>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-content>
+          <mat-card-header>
+            <mat-card-title>Bar Graph</mat-card-title>
+          </mat-card-header>
+          <chart [type]="type" [data]="data" [options]="options"></chart>
+        </mat-card-content>
+      </mat-card>
+    
+      <mat-card>
+        <mat-card-content>
+          <mat-card-header>
+            <mat-card-title>Line Graph</mat-card-title>
+          </mat-card-header>
+          <chart [type]="type" [data]="data" [options]="options"></chart>
+        </mat-card-content>
+      </mat-card>
+ 
+      <mat-card>
+        <mat-card-content>
+          <mat-card-header>
+            <mat-card-title>Line Graph</mat-card-title>
+          </mat-card-header>
+          <chart [type]="type" [data]="data" [options]="options"></chart>
+        </mat-card-content>
+      </mat-card>
+   </div>
+<div  class="content" >
+  <mat-card class="first-child">
+    <mat-card-content>
+      <div class="candidate-list-container">
+        <h2>Liste des candidats</h2>
+        <div class="search-bar">
+          <input [(ngModel)]="searchQuery" placeholder="Search..." (input)="filterData()">
+        </div>
+        </div>
+        <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef > Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+      
+          <!-- Weight Column -->
+          <ng-container matColumnDef="prenom">
+            <th mat-header-cell *matHeaderCellDef> Prenom </th>
+            <td mat-cell *matCellDef="let element"> {{element.prenon}} </td>
+          </ng-container>
+      
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="reserved">
+            <th mat-header-cell *matHeaderCellDef> Reserved </th>
+            <td mat-cell *matCellDef="let element"> {{element.reserved?"Yes":"No"}} </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                       showFirstLastButtons
+                       aria-label="Select page of periodic elements">
+        </mat-paginator>
+        </div>
+    </mat-card-content>
+    </mat-card>
+
+  <mat-card class="second-child">
+    <mat-card-content>
+      <mat-card-header>
+        <mat-card-title>Line Graph</mat-card-title>
+      </mat-card-header>
+      <div style="display: block;">
+        <canvas id="myDoughnutChart"></canvas>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
 
 
+  
+
+
+<!-- end -->
+ 

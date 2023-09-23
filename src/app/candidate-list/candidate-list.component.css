@@ -1,0 +1,94 @@
+/* .mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-mdc-row:hover .mat-mdc-cell {
+    background-color: rgb(131, 179, 255);
+  }
+  
+  .demo-row-is-clicked {
+    font-weight: bold;
+  } */
+  /* Style for the wrapper container */
+.candidate-list-container {
+    /* background-color: #f8f8f8; Set a background color for the container */
+    padding: 20px 0; /* Add some padding for spacing */
+  }
+  
+  /* Style for the heading */
+  h2 {
+    font-size: 24px; /* Set the font size */
+    margin-bottom: 10px; /* Add some space below the heading */
+  }
+  
+  /* Style for the search input container */
+  .search-bar {
+    margin-bottom: 20px; /* Add space below the search input */
+  }
+  
+  /* Style for the search input field */
+  .search-bar input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Style for the search input field when focused */
+  .search-bar input:focus {
+    outline: none;
+    border-color: #007bff; /* Change to your desired focus color */
+  }
+  
+  /* mat-grid-tile {
+    background: lightblue;
+  } */
+  .container{
+    margin: 0;
+
+  }
+  mat-card{
+    margin: 20px;
+  }
+  .nav-flex {
+    margin-top: 5% !important;
+    display: flex;
+  }
+  .content{
+    display:flex;
+  }
+  .first-child{
+    flex:2;
+  }
+  .second-child{
+    flex:1;
+  }
+  @media screen and (max-width: 770px) {
+    .nav-flex {
+      display: flex;
+  align-content: flex-start;
+  
+    }
+    .content{
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-between;
+    }
+    
+  }
+  @media screen and (max-width: 450px) {
+    .nav-flex {
+      display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+    }
+    .content{
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-between;
+    }
+    
+  }
